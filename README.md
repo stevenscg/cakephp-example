@@ -13,18 +13,18 @@ Running on OpenShift
 
 Create an account at http://openshift.redhat.com/
 
-Create a php-5.3 application (you can call your application whatever you want)
+Create a php-5.3 application (you can call your application whatever you want, we are using "cakeapp" here)
 
-    rhc app create -a cake -t php-5.3
+    rhc app create -a cakeapp -t php-5.3
 
 Add MySQL support to your application
 
-    rhc app cartridge add -a cake -c mysql-5.1
+    rhc app cartridge add -a cakeapp -c mysql-5.1
 
 Add this upstream CakePHP repo
 
     cd cake
-    git remote add upstream -m master git://github.com/openshift/cakephp-example.git
+    git remote add upstream -m master git://github.com/stevenscg/cakephp-example.git
     git pull -s recursive -X theirs upstream master
     # note that the git pull above can be used later to pull updates to CakePHP
     
@@ -34,7 +34,7 @@ Then push the repo upstream
 
 That's it, you can now checkout your application at (default admin account is admin/admin):
 
-    http://cake-$yournamespace.rhcloud.com
+    http://cakeapp-$yournamespace.rhcloud.com
 
 
 NOTES:
